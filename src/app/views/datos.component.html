@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="card w-100 text-center w-150 " style="background: #D8EBFF;" >
+        <div class="card-title" style="margin-top:10px;">
+            <span><h1>Needzaio</h1></span>
+        </div>
+    </div>
+    <div class="card w-100 text-center" style="margin-top: 20px;background: #CDDEEF;">
+            <div class="card-head">
+                <h2>Aviones</h2>
+            </div>
+            <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item"><h3><b>Cantidad de aviones:</b> {{Avion.length}}</h3></li>
+            </ul>
+            <div class="card-body">
+                <ul id="Aviones-list">
+                    <li *ngFor="let avn of Avion" class="Aviones-data text-center ">
+                            <h4><b>Callsing: </b>{{avn.callSing}}</h4>
+                            <h4><b>Machine ID: </b>{{avn.maintHistories[0].machineID}}</h4>
+                            <h4><b>Cant maintHistories: </b>{{avn.maintHistories.length}}</h4>
+                            <h4><b>Cantidad de servicios:</b></h4><h4>{{avn.maintHistories[0].maintTaskHistories.length}}</h4>
+                            <h4><b>maintCmpActivityID:</b></h4><h4>{{avn.maintHistories[0].maintTaskHistories[0].maintCmpActivityID}}</h4>
+                            <h4><b>dateInit:</b></h4><h4>{{avn.maintHistories[0].dateInit}}</h4>
+                            <h4><b>dateFinish:</b></h4><h4>{{avn.maintHistories[0].dateFinish}}</h4>
+                            <h4><b>maintCmpActName:</b></h4><h4>{{avn.maintHistories[0].maintCmpActivity.maintCmpActName}}</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card w-100 text-center" style="margin-top: 20px;background: #CDDEEF;">
+                <div class="card-head">
+                    <h2>2. maintCmpActivity</h2>
+                </div>
+                <div class="card-body">
+                    <ul id="Aviones-list">
+                        <li *ngFor="let rst of resultados" class="Aviones-data text-left" style="margin-left: 5px">
+                            <h4><b>maintCmpActName:</b></h4><h4>{{rst[0].maintCmpActivity.maintCmpActName}}</h4>
+                            <h4><b>maintHistories: </b></h4><br>
+                            <ul>
+                                <li>
+                                    <h4><b>machineID: </b></h4> <h4>{{rst[0].maintCmpActivity.maintHistories[0].machineID}}</h4>
+                                </li>
+                                <li>
+                                    <h4><b>dateInit: </b></h4> <h4>{{rst[0].maintCmpActivity.maintHistories[0].dateInit}}</h4>
+                                </li>
+                                <li>
+                                    <h4><b>Machine: </b></h4> 
+                                </li>
+                                <ul>
+                                    <li>
+                                        <h4><b>Callsing: </b></h4> <h4>{{rst[0].maintCmpActivity.maintHistories[0].Machine.callSing}}</h4>  
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+</div>
+<footer>
+        &copy; Juan Felipe Gonzalez Ortiz
+</footer>
